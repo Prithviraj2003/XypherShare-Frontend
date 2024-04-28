@@ -348,7 +348,7 @@ const Receive = () => {
                         dominantBaseline="middle"
                         textAnchor="middle"
                       >
-                        {receivedPercentage}%
+                        {receivedPercentage?receivedPercentage:0}%
                       </text>
                       <text
                         fill="#fff"

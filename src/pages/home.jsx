@@ -312,7 +312,27 @@ const Home = () => {
                     </div>
                   </div>
                 )}
-                {files.length > 0 && (
+                {files.length > 0 && !shareCode && (
+                  <div className="loader">
+                    <div className="spacer"></div>
+                    <div className="lds-roller">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div className="spacer"></div>
+                    <div>
+                      <h4>Connecting to sender</h4>
+                      <p>Trying to establish a connection with the sender</p>
+                    </div>
+                  </div>
+                )}
+                {files.length > 0 && shareCode && (
                   <div className="transfer-sender">
                     <div>
                       <div className="transfer-sender-inner">
