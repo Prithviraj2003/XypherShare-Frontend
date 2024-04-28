@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import qr from "qrcode";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   const [socket, setSocket] = useState();
   const [destination, setDestination] = useState("");
@@ -314,9 +316,10 @@ const Home = () => {
                   <div className="transfer-sender">
                     <div>
                       <div className="transfer-sender-inner">
-                        <a href="/">
-                          <i className="bi bi-x-lg icon-close"></i>
-                        </a>
+                        <i
+                          className="bi bi-x-lg icon-close"
+                          onClick={() => navigate("/")}
+                        ></i>
                         <div className="spacer"></div>
                         <div className="container-files">
                           <div className="item-file">

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Receive = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   console.log(id);
   const [tempCode, setTempCode] = useState("");
@@ -213,9 +214,10 @@ const Receive = () => {
           <div className="modal-background"></div>
           <div className="container-modal">
             <div className="transfer-receiver">
-              <a href={id ? "/receive" : "/"}>
-                <i className="bi bi-x-lg icon-close"></i>
-              </a>
+              <i
+                className="bi bi-x-lg icon-close"
+                onClick={() => navigate(`${id ? "/receive" : "/"}`)}
+              ></i>
               {state === "loading" && (
                 <div className="loader">
                   <div className="spacer"></div>
@@ -271,9 +273,12 @@ const Receive = () => {
                     />
                   </div>
                   <div className="spacer"></div>
-                  <a className="button on-white" href={`/receive/${tempCode}`}>
+                  <div
+                    className="button on-white"
+                    onClick={() => navigate(`/receive/${tempCode}`)}
+                  >
                     Submit
-                  </a>
+                  </div>
                 </div>
               )}
 
@@ -500,9 +505,6 @@ const Receive = () => {
               <p>
                 Had a good experience using our tool? Please share your positive
                 experience with others and{" "}
-                <a className="link" target="_blank" href="/help-us-grow">
-                  help us grow!
-                </a>
               </p>
             </div>
           </div>
