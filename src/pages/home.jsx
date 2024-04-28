@@ -244,6 +244,11 @@ const Home = () => {
           console.log("ICE Candidate added");
           console.log("pc", pc.current);
           break;
+        case "TRANSFER_COMPLETE":
+          console.log("Transfer Complete", data);
+
+          break;
+
         default:
           console.log("Unknown event: ", data.event);
       }
@@ -313,22 +318,24 @@ const Home = () => {
                   </div>
                 )}
                 {files.length > 0 && !shareCode && (
-                  <div className="loader">
-                    <div className="spacer"></div>
-                    <div className="lds-roller">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                    <div className="spacer"></div>
-                    <div>
-                      <h4>Connecting to sender</h4>
-                      <p>Trying to establish a connection with the sender</p>
+                  <div className="transfer-receiver">
+                    <div className="loader">
+                      <div className="spacer"></div>
+                      <div className="lds-roller">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                      <div className="spacer"></div>
+                      <div>
+                        <h4>Connecting to Server</h4>
+                        <p>Trying to establish a connection with the server</p>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -338,7 +345,10 @@ const Home = () => {
                       <div className="transfer-sender-inner">
                         <i
                           className="bi bi-x-lg icon-close"
-                          onClick={() => navigate("/")}
+                          onClick={() => {
+                            setShareCode(null);
+                            setFiles([]);
+                          }}
                         ></i>
                         <div className="spacer"></div>
                         <div className="container-files">
