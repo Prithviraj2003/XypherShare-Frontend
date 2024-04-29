@@ -206,7 +206,7 @@ const Receive = () => {
         }
       });
     }
-  }, []);
+  }, [id, state]);
   return (
     <div className="page-receiver">
       <div className="content-top">
@@ -297,7 +297,7 @@ const Receive = () => {
                     ))}
                   </div>
                   <div className="spacer"></div>
-                  <a
+                  <div
                     className="button on-white"
                     onClick={() => {
                       socket.send(
@@ -311,7 +311,7 @@ const Receive = () => {
                     }}
                   >
                     Download
-                  </a>
+                  </div>
                 </div>
               )}
               {state === "transfering" && (
@@ -348,7 +348,7 @@ const Receive = () => {
                         dominantBaseline="middle"
                         textAnchor="middle"
                       >
-                        {receivedPercentage?receivedPercentage:0}%
+                        {receivedPercentage ? receivedPercentage : 0}%
                       </text>
                       <text
                         fill="#fff"
@@ -378,10 +378,10 @@ const Receive = () => {
         </div>
         <div className="right">
           <div className="right-centered">
-            <h1>Receiving files with QuickShare</h1>
+            <h1>Receiving files with XypherShare</h1>
             {state !== "enterCode" ? (
               <p>
-                You are about to start a secure transfer with ToffeeShare,
+                You are about to start a secure transfer with XypherShare,
                 directly from the sender. Click download to start receiving the
                 file(s).
               </p>
@@ -398,7 +398,7 @@ const Receive = () => {
         <div className="container-informative">
           <h2>Tips and tricks</h2>
           <p className="italic">
-            In order to use ToffeeShare to its fullest potential we would like
+            In order to use XypherShare to its fullest potential we would like
             to give you some tips and tricks. These are based on suggestions and
             questions we received over the last couple of years.
           </p>
@@ -441,7 +441,7 @@ const Receive = () => {
             <div className="block-info">
               <h3>Make sure the sender keeps connected</h3>
               <p>
-                The biggest mistake when using ToffeeShare is if the sender
+                The biggest mistake when using XypherShare is if the sender
                 decides to close the website or turns off the device. Peer to
                 peer only works if both sender and receiver are online at the
                 same time.
@@ -456,16 +456,9 @@ const Receive = () => {
               <h3>Sending folders? Put them in an archive!</h3>
               <p>
                 We currently do not support sending folders. Instead you can put
-                all of your files in an{" "}
-                <a
-                  className="link"
-                  target="_blank"
-                  href="https://www.wikihow.com/Make-a-Zip-File"
-                >
-                  archive or zip file
-                </a>
-                . This allows you to transfer complete folder structures and
-                will even save on bandwidth.
+                all of your files in an archive or zip file . This allows you to
+                transfer complete folder structures and will even save on
+                bandwidth.
               </p>
             </div>
           </div>
@@ -504,7 +497,7 @@ const Receive = () => {
               <h3>Spread the word</h3>
               <p>
                 Had a good experience using our tool? Please share your positive
-                experience with others and{" "}
+                experience with others.
               </p>
             </div>
           </div>

@@ -20,21 +20,29 @@ const Navbar = () => {
       >
         <div className="header-logo">
           <div className="title-and-slogan">
-            <span className="title">Quick Share</span>
+            <span className="title">Xypher Share</span>
             <span className="slogan">Making sharing Easy . . . </span>
           </div>
         </div>
       </div>
       <div className="container-menu-desktop">
         <div className="links-desktop">
-          <div onClick={() => navigate("/")} className="menu-link">
+          <div
+            onClick={() => navigate("/")}
+            className="menu-link"
+            style={{ cursor: "pointer" }}
+          >
             Transfer
           </div>
-          <div onClick={() => navigate("/receive")} className="menu-link">
+          <div
+            onClick={() => navigate("/receive")}
+            className="menu-link"
+            style={{ cursor: "pointer" }}
+          >
             Receive
           </div>
         </div>
-        <div className="menu-buttons">
+        <div className="menu-buttons" style={{ cursor: "pointer" }}>
           <div className="menu-button">Download</div>
           <div className="menu-button-outlined"> Nearby devices</div>
         </div>
@@ -66,6 +74,7 @@ const Navbar = () => {
               setMenu(false);
             }}
             className="menu-button-outlined"
+            style={{ cursor: "pointer" }}
           >
             Transfer
           </div>
@@ -75,6 +84,7 @@ const Navbar = () => {
               setMenu(false);
             }}
             className="menu-button-outlined"
+            style={{ cursor: "pointer" }}
           >
             Receive
           </div>

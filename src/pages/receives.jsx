@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Receives = () => {
@@ -50,7 +50,7 @@ const Receives = () => {
         </div>
         <div className="right">
           <div className="right-centered">
-            <h1>Receiving files with QuickShare</h1>
+            <h1>Receiving files with XypherShare</h1>
             <p>
               You are one step away from downloading your file(s). Enter Share
               Code received from sender and submit to open download page.
@@ -62,7 +62,7 @@ const Receives = () => {
         <div className="container-informative">
           <h2>Tips and tricks</h2>
           <p className="italic">
-            In order to use ToffeeShare to its fullest potential we would like
+            In order to use XypherShare to its fullest potential we would like
             to give you some tips and tricks. These are based on suggestions and
             questions we received over the last couple of years.
           </p>
@@ -105,7 +105,7 @@ const Receives = () => {
             <div className="block-info">
               <h3>Make sure the sender keeps connected</h3>
               <p>
-                The biggest mistake when using ToffeeShare is if the sender
+                The biggest mistake when using XypherShare is if the sender
                 decides to close the website or turns off the device. Peer to
                 peer only works if both sender and receiver are online at the
                 same time.
@@ -120,16 +120,9 @@ const Receives = () => {
               <h3>Sending folders? Put them in an archive!</h3>
               <p>
                 We currently do not support sending folders. Instead you can put
-                all of your files in an{" "}
-                <a
-                  className="link"
-                  target="_blank"
-                  href="https://www.wikihow.com/Make-a-Zip-File"
-                >
-                  archive or zip file
-                </a>
-                . This allows you to transfer complete folder structures and
-                will even save on bandwidth.
+                all of your files in an archive or zip file . This allows you to
+                transfer complete folder structures and will even save on
+                bandwidth.
               </p>
             </div>
           </div>
@@ -168,7 +161,7 @@ const Receives = () => {
               <h3>Spread the word</h3>
               <p>
                 Had a good experience using our tool? Please share your positive
-                experience with others and{" "}
+                experience with others.
               </p>
             </div>
           </div>
