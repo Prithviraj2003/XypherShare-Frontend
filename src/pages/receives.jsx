@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Receives = () => {
@@ -50,7 +50,7 @@ const Receives = () => {
         </div>
         <div className="right">
           <div className="right-centered">
-            <h1>Receiving files with QuickShare</h1>
+            <h1>Receiving files with XypherShare</h1>
             <p>
               You are one step away from downloading your file(s). Enter Share
               Code received from sender and submit to open download page.

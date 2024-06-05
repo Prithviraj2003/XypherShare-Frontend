@@ -348,7 +348,7 @@ const Receive = () => {
                         dominantBaseline="middle"
                         textAnchor="middle"
                       >
-                        {receivedPercentage?receivedPercentage:0}%
+                        {receivedPercentage ? receivedPercentage : 0}%
                       </text>
                       <text
                         fill="#fff"
@@ -378,7 +378,7 @@ const Receive = () => {
         </div>
         <div className="right">
           <div className="right-centered">
-            <h1>Receiving files with QuickShare</h1>
+            <h1>Receiving files with XypherShare</h1>
             {state !== "enterCode" ? (
               <p>
                 You are about to start a secure transfer with ToffeeShare,

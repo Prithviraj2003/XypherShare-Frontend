@@ -20,7 +20,7 @@ const Navbar = () => {
       >
         <div className="header-logo">
           <div className="title-and-slogan">
-            <span className="title">Quick Share</span>
+            <span className="title">Xypher Share</span>
             <span className="slogan">Making sharing Easy . . . </span>
           </div>
         </div>

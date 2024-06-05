@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import qr from "qrcode";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 const Home = () => {
-  const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   const [socket, setSocket] = useState();
   const [destination, setDestination] = useState("");
@@ -618,7 +616,7 @@ const Home = () => {
           </div>
           <div className="content-bottom">
             <div className="container-informative">
-              <h2>What is QuickShare ?</h2>
+              <h2>What is XypherShare ?</h2>
               <p className="text-explained">
                 We are a free and independent peer-to-peer (P2P) file sharing
                 service that prioritizes your privacy and keeps your data safe.
@@ -636,7 +634,7 @@ const Home = () => {
                   <p>
                     When you close the browser tab your files are no longer
                     accessible, minimising the risk of anyone getting unwanted
-                    access. QuickShare uses the peer-to-peer technology WebRTC
+                    access. XypherShare uses the peer-to-peer technology WebRTC
                     to find the shortest path, meaning sometimes your data
                     doesn't even have to leave the building!
                   </p>
@@ -683,7 +681,7 @@ const Home = () => {
                   <h3>Low environmental impact</h3>
                   <p>
                     Because we don't store data we don't need bulky servers, and
-                    that saves a lot of energy. By using QuickShare you'll have
+                    that saves a lot of energy. By using XypherShare you'll have
                     a much smaller carbon footprint than when using a cloud
                     storage provider.
                   </p>
