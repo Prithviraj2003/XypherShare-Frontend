@@ -688,7 +688,7 @@ const Home = () => {
                   <h3>Low environmental impact</h3>
                   <p>
                     Because we don't store data we don't need bulky servers, and
-                    that saves a lot of energy. By using QuickShare you'll have
+                    that saves a lot of energy. By using XypherShare you'll have
                     a much smaller carbon footprint than when using a cloud
                     storage provider.
                   </p>
