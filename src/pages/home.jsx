@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import qr from "qrcode";
 import toast from "react-hot-toast";
-
 const Home = () => {
   const [files, setFiles] = useState([]);
   const [socket, setSocket] = useState();
