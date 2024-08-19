@@ -5,9 +5,31 @@ const Home = () => {
   const [files, setFiles] = useState([]);
   const [socket, setSocket] = useState();
   const [destination, setDestination] = useState("");
+  const [state,setState] = useState("idle");
   const pc = useRef();
   const input = useRef();
   let dataSent = 0;
+  const sizeSent = useRef(0);
+  const fileSize = useRef(0);
+  const filesSent = useRef(0);
+  const [circleStroke, setCircleStroke] = useState(0);
+  const [sentPercentage, setSentPercentage] = useState(0);
+  if (state === "sending") {
+    let intvalId = setInterval(() => {
+      setSentPercentage(
+        Math.floor((sizeSent.current / fileSize.current) * 100)
+      );
+      setCircleStroke((sizeSent.current / fileSize.current) * 615.752);
+      if (
+        sizeSent.current === fileSize.current &&
+        filesSent.current === files.length
+      ) {
+        setSentPercentage(100);
+        setCircleStroke(615.752);
+        clearInterval(intvalId);
+      }
+    }, 200);
+  }
   const dataChannel = useRef();
   const [sendFiles, setSendFile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
