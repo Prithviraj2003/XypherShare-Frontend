@@ -390,7 +390,7 @@ const Home = () => {
                               class="button-social whatsapp"
                               onClick={() =>
                                 window.open(
-                                  `https://web.whatsapp.com/send?text=http://localhost:3000/receive/${shareCode}`,
+                                  `https://web.whatsapp.com/send?text=https://xyphershare.cloud/receive/${shareCode}`,
                                   "_blank"
                                 )
                               }
@@ -405,7 +405,7 @@ const Home = () => {
                               class="button-social facebook"
                               onClick={() =>
                                 window.open(
-                                  `https://www.facebook.com/sharer/sharer.php?mode=message&u=https://toffeeshare.com/${shareCode}`,
+                                  `https://www.facebook.com/sharer/sharer.php?mode=message&u=https://xyphershare.cloud/receive/${shareCode}`,
                                   "_blank"
                                 )
                               }
@@ -420,7 +420,7 @@ const Home = () => {
                               class="button-social email"
                               onClick={() =>
                                 window.open(
-                                  `mailto:?Subject&body=/receive/${shareCode}`,
+                                  `mailto:?Subject&body=https://xyphershare.cloud/receive/${shareCode}`,
                                   "_blank"
                                 )
                               }
@@ -435,7 +435,7 @@ const Home = () => {
                               class="button-social gmail"
                               onClick={() =>
                                 window.open(
-                                  `https://mail.google.com/mail/?view=cm&source=mailto&body=https://toffeeshare.com/receive/${shareCode}`,
+                                  `https://mail.google.com/mail/?view=cm&source=mailto&body=https://xyphershare.cloud/receive/${shareCode}`,
                                   "_blank"
                                 )
                               }
@@ -450,7 +450,7 @@ const Home = () => {
                               class="button-social linkdin"
                               onClick={() =>
                                 window.open(
-                                  `https://www.linkedin.com/sharing/share-offsite/?url=https://toffeshare.com/receive/${shareCode}`,
+                                  `https://www.linkedin.com/sharing/share-offsite/?url=https://xyphershare.cloud/receive/${shareCode}`,
                                   "_blank"
                                 )
                               }
@@ -465,7 +465,7 @@ const Home = () => {
                               class="button-social twitter"
                               onClick={() =>
                                 window.open(
-                                  `https://www.linkedin.com/sharing/share-offsite/?url=https://toffeeshare.com/c/H8dC6t8QTRreceive/${shareCode}`,
+                                  `https://www.linkedin.com/sharing/share-offsite/?url=https://xyphershare.cloud/c/H8dC6t8QTRreceive/${shareCode}`,
                                   "_blank"
                                 )
                               }
