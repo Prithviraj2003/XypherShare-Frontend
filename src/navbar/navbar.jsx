@@ -1,10 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [menu, setMenu] = useState(false);
+
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+  useEffect(() => {
+    // Listen for the beforeinstallprompt event
+    window.addEventListener("beforeinstallprompt", (e) => {
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault();
+      // Store the event so it can be triggered later
+      setDeferredPrompt(e);
+    });
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (deferredPrompt) {
+      // Show the install prompt
+      deferredPrompt.prompt();
+      // Wait for the user's response to the prompt
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`User response: ${outcome}`);
+      // Clear the deferred prompt so it can't be used again
+      setDeferredPrompt(null);
+    }
+  };
   return (
     <header className="app-header">
       <Toaster
@@ -43,8 +67,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="menu-buttons" style={{ cursor: "pointer" }}>
-          <div className="menu-button">Download</div>
-          <div className="menu-button-outlined"> Nearby devices</div>
+          <div className="menu-button" onClick={handleInstallClick}>
+            Download
+          </div>
         </div>
       </div>
       <svg
