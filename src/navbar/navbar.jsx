@@ -52,7 +52,7 @@ const Navbar = () => {
         fill="currentColor"
         stroke-width="0"
         viewBox="0 0 512 512"
-        class="menu-button-mobile"
+        className="menu-button-mobile"
         height="35"
         width="35"
         xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ const Navbar = () => {
         ></path>
       </svg>
       {menu && (
-        <div class="container-menu-mobile">
+        <div className="container-menu-mobile">
           <div
             onClick={() => {
               navigate("/");
