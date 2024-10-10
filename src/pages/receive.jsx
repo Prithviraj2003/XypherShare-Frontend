@@ -158,7 +158,7 @@ const Receive = () => {
     );
   };
   useEffect(() => {
-    if (id && state !== "enterCode") {
+    if (id && state === "loading") {
       console.log("Connecting to sender", id, state);
       // Create a WebSocket connection to the server
       const socket = new WebSocket(`${process.env.REACT_APP_SERVER_WSS}`);

@@ -1,14 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
 const Navbar = () => {
   const navigate = useNavigate();
   const [menu, setMenu] = useState(false);
-
   const [deferredPrompt, setDeferredPrompt] = useState(null);
-
+  const [visitors, setVisitors] = useState(0);
+  const [filesTransfered, setFilesTransfered] = useState(0);
+  const isNew = localStorage.getItem("isNew");
+  const fetchVisitors = async () => {
+    let response = await fetch(`${process.env.REACT_APP_SERVER_API}/visit`, {
+      method: "GET",
+    });
+    let data = await response.json();
+    setVisitors(data.NoOfVisitors);
+    setFilesTransfered(data.NoOfFilesTransfered);
+  };
+  const addVisitor = async () => {
+    if (!isNew) {
+      let response = await fetch(`${process.env.REACT_APP_SERVER_API}/visit`, {
+        method: "PUT",
+      });
+      let data = await response.json();
+      setVisitors(data.NoOfVisitors);
+      localStorage.setItem("isNew", false);
+    }
+  };
   useEffect(() => {
+    addVisitor();
+    fetchVisitors();
     // Listen for the beforeinstallprompt event
     window.addEventListener("beforeinstallprompt", (e) => {
       // Prevent the mini-infobar from appearing on mobile
@@ -51,6 +71,16 @@ const Navbar = () => {
       </div>
       <div className="container-menu-desktop">
         <div className="links-desktop">
+          <div>
+            <span className="visitors me-2">Total Visitors: {visitors} </span>
+          </div>
+          |
+          <div>
+            <span className="files-transfered mx-2">
+              Total Files Transfered: {filesTransfered}
+            </span>
+          </div>
+          |
           <div
             onClick={() => navigate("/")}
             className="menu-link"
@@ -75,7 +105,7 @@ const Navbar = () => {
       <svg
         stroke="currentColor"
         fill="currentColor"
-        stroke-width="0"
+        strokeWidth="0"
         viewBox="0 0 512 512"
         className="menu-button-mobile"
         height="35"
@@ -85,9 +115,9 @@ const Navbar = () => {
       >
         <path
           fill="none"
-          stroke-linecap="round"
-          stroke-miterlimit="10"
-          stroke-width="48"
+          strokeLinecap="round"
+          strokeMiterlimit="10"
+          strokeWidth="48"
           d="M88 152h336M88 256h336M88 360h336"
         ></path>
       </svg>
